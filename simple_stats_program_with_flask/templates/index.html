@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head> 
+	<title>Table Of Values With Flask</title>
+	<link rel= "stylesheet" type= "text/css" href="{{url_for('static', filename='style.css')}}">
+
+</head>
+
+<body>
+	<h1>Table Of Values With Flask</h1>
+
+	<form action="" method="POST">  
+         <p> x: <input type="text" name="x_input"/> y: <input type="text" name="y_input"/>  </p>
+         <p> <input type="submit" value="click to submit"/> To clear the data, submit with nothing in the input fields. </p> 
+    </form>  
+    <hr>
+	<table border=2>
+		<tr> <th>x</th> <th>y</th> <tr>
+		<tbody>
+		     {% for x, y in table_values_output %}
+		        <tr> <td>{{x}}</td> <td>{{y}}</td> </tr>
+		     {% endfor %}
+		<tbody>
+    </table>
+    <hr>
+	<table border=2>
+		<tbody>
+			<tr> <th></th> <th>x</th> <th>y</th> <tr>
+		    <tr> <th>sum</th> <td>{{sum_of_x_output}}</td> <td>{{sum_of_y_output}}</td> </tr>
+		    <tr> <th>mean</th> <td>{{mean_of_x_output}}</td> <td>{{mean_of_y_output}}</td> </tr>
+		    <tr> <th>variance</th> <td>{{variance_of_x_output}}</td> <td>{{variance_of_y_output}}</td> </tr>
+		    <tr> <th>standard_deviation</th> <td>{{standard_deviation_of_x_output}}</td> <td>{{stardard_deviation_of_y_output}}</td> </tr>
+		<tbody>
+    </table>
+</body>
+
+</html>
