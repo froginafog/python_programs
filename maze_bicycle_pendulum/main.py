@@ -1,3 +1,4 @@
+#author: froginafog (Liang D.S.)
 import turtle
 import time
 import math
